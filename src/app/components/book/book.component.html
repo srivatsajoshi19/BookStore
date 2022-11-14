@@ -1,0 +1,9 @@
+<div class="card text-center my-2" style="width: 18rem;">
+    <img src="{{'assets/'+ book.imageLink}}" class="card-img-top p-1" alt="Book-image" height="300">
+    <div class="card-body">
+        <abbr title="{{book.title}}">
+            <h5 class="card-title">{{book.title | bookTitle}}</h5>
+        </abbr>
+        <a routerLink="/booksDetails" class="btn btn-warning" (click)="selectBook(book)">Buy Now</a>
+    </div>
+</div>

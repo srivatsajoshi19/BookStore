@@ -1,0 +1,39 @@
+<app-navbar></app-navbar>
+
+<div class="bg-secondary">
+  <h2 class="text-white text-center p-2" *ngIf="cart.length">
+    Items in your Cart
+  </h2>
+  <h2 class="text-danger text-center p-2" *ngIf="!cart.length">
+    No items in your cart
+  </h2>
+</div>
+
+<div class="container" *ngFor="let book of cart">
+  <div class="row align-items-center ">
+    <div class="col m-2">
+      <img
+        src="{{ 'assets/' + book.imageLink }}"
+        alt="book-img"
+        height="250px"
+        width="250px"
+      />
+    </div>
+
+    <div class="col">
+      <p>
+        <strong> {{ book.title }}</strong>
+      </p>
+      <p>{{ book.price | currency }}</p>
+    </div>
+    <div class="col">
+      <button class="btn btn-warning" (click)="removeFromCart(book)">
+        Remove From Cart
+      </button>
+    </div>
+  </div>
+  <hr>
+</div>
+<div *ngIf="cart.length" class="container mt-4">
+  <a class="btn btn-warning" routerLink="/checkout">CheckOut</a>
+</div>

@@ -1,0 +1,21 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <hr />
+  <div *ngFor="let item of myOrders">
+    <div>
+      <!-- <h2 class="bg-danger">Order Placed on {{item.orderPlacedOn}}</h2> -->
+      <div class="row">
+        <div class="col">
+          <img src="{{ 'assets/' + item.imageLink }}" alt="" height="300px" />
+        </div>
+        <div class="col">
+          <h4>{{ item.title }}</h4>
+          <h5>{{ item.author }}</h5>
+        </div>
+        <div class="col">
+          <!-- <h6>{{ item.quantity }}</h6> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
